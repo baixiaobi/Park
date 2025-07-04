@@ -24,12 +24,12 @@ A SQL Injection vulnerability was discovered in the `foreigner-bwdates-reports-d
     ![image](https://github.com/baixiaobi/Park/blob/main/screenshot2/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250704163201.png)
 
 2. **Navigate to the Report Section**  
-   - Go to the "Report" section and select "Normal People Report."  
+   - Go to the "Report" section and select "Foreigner People Report."  
    - Choose any date range in the `fromdate` and `todate` input fields.
-    ![image](https://github.com/baixiaobi/Park/blob/main/screenshot/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250704104910.png)
+    ![image](https://github.com/baixiaobi/Park/blob/main/screenshot2/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250704104250.png)
 3. **Intercept the Request**  
    - Intercept the data packet and find the problematic parameter fromdate
-    ![image](https://github.com/baixiaobi/Park/blob/main/screenshot/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250704104921.png)
+    ![image](https://github.com/baixiaobi/Park/blob/main/screenshot2/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250704104317.png)
 
 4. **Confirm the Vulnerability**  
    - Forward the modified request and observe a 10-second delay in the response, confirming the time-based SQL injection.
@@ -38,11 +38,11 @@ A SQL Injection vulnerability was discovered in the `foreigner-bwdates-reports-d
      ```sql
      ' AND (SELECT 7005 FROM (SELECT(SLEEP(10)))JmJX)-- QyUxp
      ```
-   - ![image](https://github.com/baixiaobi/Park/blob/main/screenshot/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250704105021.png)
+   - ![image](https://github.com/baixiaobi/Park/blob/main/screenshot2/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250704104504.png)
    
      attack payload    
 ```sql
-    POST /Park-Ticketing-Management-System-Project/ptms/foreigner-bwdates-reports-details.php HTTP/1.1
+POST /Park-Ticketing-Management-System-Project/ptms/foreigner-bwdates-reports-details.php HTTP/1.1
 Host: 127.0.0.1
 Accept-Encoding: gzip, deflate, br, zstd
 Origin: http://127.0.0.1
