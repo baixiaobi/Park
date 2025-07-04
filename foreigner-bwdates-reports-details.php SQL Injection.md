@@ -1,7 +1,7 @@
 # SQL Injection Vulnerability in Park Ticketing Management System (foreigner-bwdates-reports-details.php--fromdate)
 
 ## Overview
-A SQL Injection vulnerability was discovered in the `foreigner-bwdates-reports-details.php` file of the **Park Ticketing Management System Project in PHP v2.0** by PHPGurukul. This vulnerability allows remote attackers to execute arbitrary SQL code via the `todate` parameter in a POST request.
+A SQL Injection vulnerability was discovered in the `foreigner-bwdates-reports-details.php` file of the **Park Ticketing Management System Project in PHP v2.0** by PHPGurukul. This vulnerability allows remote attackers to execute arbitrary SQL code via the `fromdate` parameter in a POST request.
 
 ### Affected Product Details
 
